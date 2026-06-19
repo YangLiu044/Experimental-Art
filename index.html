@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>实验艺术每日简报</title>
+  <meta name="description" content="近期国外实验艺术双作品图文分析归档。">
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #68645d;
+      --paper: #f7f3eb;
+      --panel: #fffdf8;
+      --line: #ddd4c6;
+      --accent: #8b2d22;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 52px 22px 72px;
+    }
+    .kicker {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 10px 0 14px;
+      font-size: clamp(34px, 6vw, 64px);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+    .intro {
+      max-width: 720px;
+      color: #3f3b35;
+      font-size: 19px;
+    }
+    .list {
+      display: grid;
+      gap: 18px;
+      margin-top: 38px;
+    }
+    .card {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 22px;
+      padding: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: inherit;
+      text-decoration: none;
+    }
+    .thumb {
+      min-height: 150px;
+      background: url("https://static-assets.artlogic.net/w_3000%2Ch_2000%2Cc_limit%2Cf_auto%2Cfl_lossy%2Cq_auto%3Abest/ws-estherschipper2/usr/exhibitions/images/exhibitions/1259/pierre-venice2024-1_313.jpeg") center / cover;
+      border: 1px solid var(--line);
+    }
+    .date {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    h2 {
+      margin: 6px 0 8px;
+      font-size: 25px;
+      line-height: 1.25;
+    }
+    p { margin: 0; color: var(--muted); }
+    @media (max-width: 700px) {
+      .card { grid-template-columns: 1fr; }
+      .thumb { min-height: 210px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="kicker">Experimental Art Archive</div>
+    <h1>实验艺术每日简报</h1>
+    <p class="intro">每天选择一件近期国外实验艺术作品，并与另一件相关作品并置，写成完整的图文分析。这里会逐步沉淀成一个可检索的网站归档。</p>
+
+    <section class="list">
+      <a class="card" href="briefs/2026-06-19.html">
+        <div class="thumb"></div>
+        <div>
+          <div class="date">2026-06-19</div>
+          <h2>从蜂巢身体到 AI 空壳</h2>
+          <p>Pierre Huyghe《Liminals》与《Untilled》：从生物接管雕塑，到算法接管身体。</p>
+        </div>
+      </a>
+    </section>
+  </main>
+</body>
+</html>
