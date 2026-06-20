@@ -1,10 +1,15 @@
 {
-  "updatedAt": "2026-06-19T16:26:41.793Z",
+  "updatedAt": "2026-06-20T11:33:08.428Z",
   "retentionDays": 45,
   "episodes": [
     {
+      "date": "2026-06-20",
+      "audioUrl": "https://yangliu044.github.io/Experimental-Art/audio/2026-06-20.wav",
+      "audioFileName": "2026-06-20.wav"
+    },
+    {
       "date": "2026-06-19",
-      "audioUrl": "https://yangliu044.github.io/Experimental-Art/audio/2026-06-19.wav",
+      "audioUrl": "https://example.github.io/daily-news-audio/audio/2026-06-19.wav",
       "audioFileName": "2026-06-19.wav"
     }
   ]
