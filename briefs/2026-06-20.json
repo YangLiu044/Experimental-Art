@@ -1,0 +1,45 @@
+{
+  "title": "灭绝之后，声音还在融化",
+  "text": "今天的两件作品都把生态危机转译为听觉经验：Björk 与 Aleph 的《Nature Manifesto》让已经灭绝或濒危动物的声音在蓬皮杜中心的工业化通道中重新出现；Katie Paterson 的《Langjökull, Snæfellsjökull, Solheimajökull》则把冰川录音压成由冰川融水铸成的唱片，让声音在播放时和载体一起消失。",
+  "date": "2026-06-20",
+  "htmlFile": "briefs/2026-06-20.html",
+  "url": "https://yangliu044.github.io/Experimental-Art/briefs/2026-06-20.html",
+  "items": [
+    {
+      "title": "Nature Manifesto",
+      "artist": "Björk & Aleph",
+      "location": "Centre Pompidou, Paris",
+      "year": "2024",
+      "medium": "沉浸式声音装置、AI 生成声音、生态宣言、建筑声场",
+      "summary": "作品在蓬皮杜中心标志性的外部自动扶梯中播放，将 Björk 的声音、濒危或已灭绝动物的叫声、自然声景与 IRCAM 参与的 AI 声音研究组织在一起。观众不是坐下聆听，而是在穿越楼层时被声音包围，像在现代建筑的管道中听见非人生命的返场。",
+      "sources": [
+        {
+          "label": "Centre Pompidou｜Björk: After plagues and pandemics there will be new modes of existence",
+          "href": "https://www.centrepompidou.fr/en/pompidou-plus/magazine/article/bjoerk-after-plagues-and-pandemics-there-will-be-new-modes-of-existence"
+        },
+        {
+          "label": "Pitchfork｜Björk to Launch Environmental Sound Installation at Paris' Pompidou Centre",
+          "href": "https://pitchfork.com/news/bjork-to-launch-environmental-sound-installation-at-paris-pompidou-centre/"
+        }
+      ]
+    },
+    {
+      "title": "Langjökull, Snæfellsjökull, Solheimajökull",
+      "artist": "Katie Paterson",
+      "location": "Icelandic glaciers / gallery installation",
+      "year": "2007",
+      "medium": "声音录音、冰川融水唱片、三台唱机、时间性装置",
+      "summary": "Paterson 将冰岛三座冰川的声音录音压成唱片，再用对应冰川的融水铸成三张冰唱片。展出时，三张唱片在三台唱机上同时播放，直到它们完全融化；声音、冰、记录介质和作品形态在同一过程中失效。",
+      "sources": [
+        {
+          "label": "Katie Paterson｜Langjökull, Snæfellsjökull, Solheimajökull",
+          "href": "https://katiepaterson.org/artwork/langjokull-snaefellsjokull-solheimajokull/"
+        },
+        {
+          "label": "Katie Paterson｜Vatnajokull (the sound of)",
+          "href": "https://katiepaterson.org/artwork/vatnajokull-the-sound-of/"
+        }
+      ]
+    }
+  ]
+}
