@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>灭绝之后，声音还在融化</title>
+  <meta name="description" content="Björk & Aleph《Nature Manifesto》与 Katie Paterson《Langjökull, Snæfellsjökull, Solheimajökull》图文解析。">
+  <style>
+    :root {
+      --ink: #101113;
+      --muted: #62615c;
+      --paper: #f2efe7;
+      --panel: #fffdf6;
+      --moss: #5d7b42;
+      --ice: #d9f1f2;
+      --ember: #b7422d;
+      --line: rgba(16, 17, 19, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.78;
+    }
+    a { color: inherit; text-decoration-color: rgba(16, 17, 19, .35); text-underline-offset: 4px; }
+    img, video { display: block; width: 100%; height: auto; }
+    .hero {
+      min-height: 94vh;
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(360px, 1.05fr);
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(28px, 5vw, 64px);
+    }
+    .kicker {
+      width: fit-content;
+      margin-bottom: 26px;
+      padding: 4px 9px;
+      border: 1px solid var(--ink);
+      background: var(--ice);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(46px, 8vw, 108px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+    .dek {
+      max-width: 720px;
+      margin: 26px 0 0;
+      color: #34342f;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.55;
+    }
+    .meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 34px;
+    }
+    .pill {
+      padding: 7px 10px;
+      border: 1px solid var(--ink);
+      background: rgba(255, 255, 255, .58);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .hero-image {
+      min-height: 560px;
+      background: #111;
+      border-left: 1px solid var(--line);
+    }
+    .hero-image img {
+      height: 100%;
+      min-height: 560px;
+      object-fit: cover;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 54px 20px 86px;
+    }
+    section { margin-top: 72px; }
+    .lead-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+      gap: 30px;
+      align-items: start;
+    }
+    .stamp {
+      position: sticky;
+      top: 18px;
+      border-top: 6px solid var(--ink);
+      padding-top: 18px;
+      color: #252521;
+      font-size: 22px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+    .body-copy {
+      font-size: 18px;
+      color: #272722;
+    }
+    .body-copy p { margin: 0 0 18px; }
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(31px, 4vw, 54px);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 34px 0 12px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+    .project {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(310px, .72fr);
+      gap: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    .project + .project { margin-top: 78px; }
+    .project-meta {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+    .fact {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 10px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+    .fact b { color: var(--moss); }
+    figure {
+      margin: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    figcaption {
+      padding: 10px 12px 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .image-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 18px 0 26px;
+    }
+    .callout {
+      margin: 26px 0;
+      padding: 18px 20px;
+      background: #121211;
+      color: #f7f3e9;
+      font-size: 19px;
+      line-height: 1.62;
+    }
+    .callout strong { color: var(--ice); }
+    .live-card {
+      margin-top: 20px;
+      padding: 18px;
+      border: 1px solid var(--ink);
+      background: #fbfffd;
+    }
+    .live-card p { margin: 0 0 12px; color: #2a2a25; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 8px 13px;
+      background: var(--ember);
+      border: 1px solid var(--ink);
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .analysis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 26px;
+    }
+    .tile {
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .tile b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--moss);
+      font-size: 18px;
+    }
+    .sources {
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .sources li { margin-bottom: 7px; }
+    @media (max-width: 880px) {
+      .hero, .lead-grid, .project, .analysis { grid-template-columns: 1fr; }
+      .hero-image { border-left: 0; border-top: 1px solid var(--line); }
+      .hero-image, .hero-image img { min-height: 380px; }
+      .stamp { position: static; }
+      .image-pair { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-copy">
+      <div>
+        <span class="kicker">Experimental Art Dispatch</span>
+        <h1>灭绝之后，声音还在融化</h1>
+        <p class="dek">两件作品把生态危机从图像中移开，交给耳朵：一个用 AI 和建筑声场召回濒危与已灭绝动物的叫声，一个把冰川录音压进冰川融水做成的唱片，让声音随着播放一起消失。</p>
+        <div class="meta-strip">
+          <span class="pill">Björk & Aleph</span>
+          <span class="pill">Katie Paterson</span>
+          <span class="pill">声音 / 冰川 / AI / 生态时间</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="2026-06-20-assets/nature-manifesto-bjork.jpg" alt="Björk 与 Aleph 的 Nature Manifesto 项目视觉">
+    </div>
+  </header>
+
+  <main>
+    <section class="lead-grid">
+      <div class="stamp">当一个物种或一座冰川正在离场，艺术不再只是保存它的影像，而是让它的声音在失去身体之后继续发生。</div>
+      <div class="body-copy">
+        <p>生态艺术常被误读成一种带有善意的提醒：看见正在消失的自然，然后产生保护意识。但在这两件作品里，问题更具体，也更不安。声音并不是风景的附属品，而是一种活着的证据；当声音需要被 AI 复原、被录音转译、被唱片短暂承载时，观众听见的已经不是自然本身，而是自然被人类技术处理之后留下的回声。</p>
+        <p>Björk 与 Aleph 的《Nature Manifesto》把声音送进蓬皮杜中心的自动扶梯，观众在建筑内部移动时被濒危和已灭绝动物的声响包围。Katie Paterson 的《Langjökull, Snæfellsjökull, Solheimajökull》则把三座冰岛冰川的声音做成三张冰唱片，唱针每转一圈，记录就更接近消失。一个作品把消失之物重新合成出来，另一个作品让记录自身执行消失。</p>
+      </div>
+    </section>
+
+    <section class="project">
+      <article class="body-copy">
+        <h2>Nature Manifesto：工业建筑里的动物返场</h2>
+        <p><em>Nature Manifesto</em> 是 Björk 与艺术家、策展人 Aleph Molinari 为巴黎蓬皮杜中心创作的沉浸式声音装置，于 2024 年 11 月 20 日至 12 月 9 日呈现，并被纳入“Biodiversity: Which Culture for Which Future?”相关项目。它不是一场坐在黑盒子里的音乐会，而是安装在蓬皮杜中心标志性的外部自动扶梯中；观众在楼层之间移动时，声音从建筑的通道和表皮中出现。</p>
+        <p>作品由 Björk 的声音、她与 Aleph 共同构思的生态宣言、自然声景，以及濒危或已经灭绝动物的叫声组成。Centre Pompidou 的项目说明指出，这些声响与 IRCAM 的研究和 AI 模型有关，目的并不是制造一个逼真的自然剧场，而是在现代主义建筑的金属、玻璃和机械移动中放入非人生命的听觉残影。观众会听到的不是一套干净的自然样本，而是被技术处理过的、带有警报感的生命合唱。</p>
+        <div class="image-pair">
+          <figure>
+            <img src="2026-06-20-assets/nature-manifesto-card.jpg" alt="Nature Manifesto 在 Centre Pompidou 的项目视觉卡片">
+            <figcaption>Centre Pompidou 为《Nature Manifesto》发布的项目视觉。作品的发生地点不是传统展厅，而是建筑内部最具移动性的自动扶梯空间。</figcaption>
+          </figure>
+          <figure>
+            <img src="2026-06-20-assets/bjork-portrait.jpg" alt="Björk 肖像">
+            <figcaption>Björk 长期在音乐、影像、技术和生态议题之间工作；在此作中，她的声音不再只是歌唱主体，而是把动物声、宣言和建筑声场黏合起来的介质。</figcaption>
+          </figure>
+        </div>
+        <p>这件作品的关键机制在于位置。自动扶梯是蓬皮杜中心最典型的现代建筑符号之一：透明、机械、不断输送人流。把动物叫声放在那里，等于把生态危机嵌入城市文化机构的交通系统。观众不需要主动走进“自然”，而是在前往展厅的过程中被声音拦截。动物不以图像的形式作为被观看对象出现，而以声音的形式侵入人的行动路线。</p>
+        <div class="callout"><strong>作品的锋利处在于：</strong>AI 在这里不是炫技的图像生产机，而是一种晚到的听觉补偿。它让已经失去现场的声音重新被听见，却也提醒观众：如果一种叫声只能通过模型返场，那么我们听到的同时也是缺席。</div>
+        <div class="live-card">
+          <p>项目有官方介绍与社交媒体预告。公开视频可能受平台加载影响，页面保留官方项目入口，适合进一步查看文本、日期和相关说明。</p>
+          <a class="button" href="https://www.centrepompidou.fr/en/pompidou-plus/magazine/article/bjoerk-after-plagues-and-pandemics-there-will-be-new-modes-of-existence" target="_blank" rel="noreferrer">打开 Pompidou 项目页</a>
+        </div>
+      </article>
+      <aside class="project-meta">
+        <div class="fact"><b>艺术家</b><span>Björk & Aleph</span></div>
+        <div class="fact"><b>年份</b><span>2024</span></div>
+        <div class="fact"><b>形式</b><span>沉浸式声音装置、AI 生成声音、生态宣言、建筑声场</span></div>
+        <div class="fact"><b>场域</b><span>Centre Pompidou, Paris；2024 年 11 月 20 日至 12 月 9 日</span></div>
+        <div class="fact"><b>观看</b><span>观众在自动扶梯中移动，听见 Björk 的声音、动物叫声与自然声景交织。</span></div>
+      </aside>
+    </section>
+
+    <section class="project">
+      <article class="body-copy">
+        <h2>Langjökull, Snæfellsjökull, Solheimajökull：唱片播放到自己消失</h2>
+        <p>Katie Paterson 的 <em>Langjökull, Snæfellsjökull, Solheimajökull</em> 创作于 2007 年，作品标题来自冰岛三座冰川。它的结构极其清楚：艺术家先获得三座冰川的声音录音，将这些声音压成三张唱片；随后用每座冰川的融水分别铸成对应的冰唱片。展出时，三张冰唱片被放在三台唱机上同时播放，直到完全融化。</p>
+        <p>观众在现场会看到唱机、唱针和透明的冰质唱片。声音从唱片中被读出，但读出的过程也在破坏载体：冰面被唱针划过，温度让冰持续变形，融水改变唱片的稳定性，声音逐渐失真、断裂，最后停止。这里没有宏大的灾难图像，只有一个缓慢却无法逆转的物理过程。作品把冰川退缩的地质尺度压缩进展厅里一段可听见、可目睹的时间。</p>
+        <div class="image-pair">
+          <figure>
+            <img src="2026-06-20-assets/paterson-glacier-records-1.jpg" alt="Katie Paterson 冰川融水唱片放置在唱机上">
+            <figcaption>冰唱片被放置在唱机上。它既是声音记录的载体，也是正在融化的材料。</figcaption>
+          </figure>
+          <figure>
+            <img src="2026-06-20-assets/paterson-glacier-records-2.jpg" alt="Katie Paterson 冰唱片播放中的细节">
+            <figcaption>唱针读取冰面时，声音不是稳定复制，而是伴随材料变形不断衰减。</figcaption>
+          </figure>
+        </div>
+        <figure>
+          <img src="2026-06-20-assets/paterson-glacier-records-3.jpg" alt="三台唱机同时播放 Katie Paterson 的冰川唱片">
+          <figcaption>三台唱机同时播放三座冰川的声音。作品的完整形态只存在于融化尚未完成的短暂时间中。</figcaption>
+        </figure>
+        <p>Paterson 的另一件作品 <em>Vatnajokull (the sound of)</em> 也有相近的问题意识：艺术家曾建立一条通往冰岛 Vatnajökull 冰川的实时电话线路，听众可拨号听见冰川融化的声音。两件作品都把冰川从远方风景转化为听觉事件。不同之处在于，电话线路制造的是遥远现场的即时性，而冰唱片制造的是一种注定失败的保存：越播放，越损耗；越想听见，越加速它的终止。</p>
+        <div class="callout"><strong>作品的残酷处在于：</strong>它没有把冰川当作被保护的对象展示，而是让记录介质亲自承担冰川的命运。声音不是对消失的纪念品，而是消失正在发生时产生的摩擦。</div>
+        <div class="live-card">
+          <p>艺术家官网提供项目图片和简明机制说明；页面为无 www 的官方域名，访问稳定性优于 www 子域。</p>
+          <a class="button" href="https://katiepaterson.org/artwork/langjokull-snaefellsjokull-solheimajokull/" target="_blank" rel="noreferrer">打开 Katie Paterson 项目页</a>
+        </div>
+      </article>
+      <aside class="project-meta">
+        <div class="fact"><b>艺术家</b><span>Katie Paterson</span></div>
+        <div class="fact"><b>年份</b><span>2007</span></div>
+        <div class="fact"><b>形式</b><span>声音录音、冰川融水唱片、三台唱机、时间性装置</span></div>
+        <div class="fact"><b>地点</b><span>冰岛三座冰川的录音与融水；展厅中以唱机装置呈现</span></div>
+        <div class="fact"><b>观看</b><span>观众听见冰川声音，同时看见承载声音的冰唱片逐渐融化。</span></div>
+      </aside>
+    </section>
+
+    <section class="body-copy">
+      <h2>被技术保存的，不一定还活着</h2>
+      <p>这两件作品都没有把声音处理成纯粹的资料。动物叫声和冰川声音当然可以被录音、建模、播放、归档，但作品真正指出的是：保存从来不是中性的。声音一旦脱离身体，就会进入新的制度和机器：博物馆的建筑、声音研究机构的模型、唱机的机械读取、展厅的观看时间。所谓“听见自然”，已经包含了人类如何处理、转译和管理自然的全部痕迹。</p>
+      <div class="analysis">
+        <div class="tile"><b>《Nature Manifesto》让缺席返回</b>它让濒危和灭绝动物以合成、组织、空间化的声音进入城市建筑。观众听见的是一种被技术召回的生命迹象，也是一种无法回到原初生态关系中的声音。</div>
+        <div class="tile"><b>Paterson 让记录失效</b>冰唱片看似保存了冰川声音，却在播放时暴露保存的不可能。载体不是保护声音的外壳，而是和冰川一样受温度、时间和损耗支配的物质。</div>
+        <div class="tile"><b>两者都拒绝风景化</b>冰川和动物不再作为漂亮图像出现，而是成为听觉上的压力。观众面对的不是“自然之美”，而是自然被迫以残响、样本和融水形式进入艺术系统。</div>
+      </div>
+      <p>《Nature Manifesto》的声音发生在一座文化机构的交通通道中；Paterson 的冰唱片发生在展厅里最普通的播放设备上。前者把非人生命安置在现代建筑的流动结构中，后者让地质时间落到唱针与冰面的接触点上。它们共同改变了生态艺术的情绪：不是站在灾难之外发出呼吁，而是把灾难的机制做成观众必须穿过或聆听的环境。</p>
+      <p>也正因为如此，这组作品最有力量的地方不是“自然会消失”的主题，而是它们对保存欲望的怀疑。AI 可以让灭绝动物的声音被重新听见，但它不能恢复动物赖以发声的世界；唱片可以把冰川声音刻下来，但播放本身会让冰质载体崩解。艺术在这里不是替自然建立一个永久档案，而是让观众意识到：当我们终于开始认真保存某种声音时，它往往已经处在离别之中。</p>
+      <p>这种判断并不悲观。相反，它让责任变得更具体。声音仍然能够抵达身体，仍然能够改变人在空间中的行动节奏，仍然能够让抽象的生态危机变成一次切身经验。只是作品拒绝给观众一种廉价安慰：听见不等于拥有，保存不等于挽回。耳朵接收到的每一次返场，都同时带着一个问题：如果生命的声音只能以模型、录音和融水唱片的形式回来，我们还能为它正在失去的世界做什么？</p>
+    </section>
+
+    <section class="sources">
+      <h3>来源与延伸阅读</h3>
+      <ol>
+        <li><a href="https://www.centrepompidou.fr/en/pompidou-plus/magazine/article/bjoerk-after-plagues-and-pandemics-there-will-be-new-modes-of-existence" target="_blank" rel="noreferrer">Centre Pompidou: Björk: "After plagues and pandemics there will be new modes of existence."</a></li>
+        <li><a href="https://pitchfork.com/news/bjork-to-launch-environmental-sound-installation-at-paris-pompidou-centre/" target="_blank" rel="noreferrer">Pitchfork: Björk to Launch Environmental Sound Installation at Paris' Pompidou Centre</a></li>
+        <li><a href="https://katiepaterson.org/artwork/langjokull-snaefellsjokull-solheimajokull/" target="_blank" rel="noreferrer">Katie Paterson: Langjökull, Snæfellsjökull, Solheimajökull</a></li>
+        <li><a href="https://katiepaterson.org/artwork/vatnajokull-the-sound-of/" target="_blank" rel="noreferrer">Katie Paterson: Vatnajokull (the sound of)</a></li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
