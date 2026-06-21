@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>声音死后，谁来继续发声</title>
+  <meta name="description" content="evala《Studies for》与 Janet Cardiff《The Forty Part Motet》：从 AI 声音档案到四十声部声雕塑，声音如何在空间中继续生成。">
+  <style>
+    :root {
+      --ink: #111315;
+      --muted: #62656b;
+      --paper: #f5f1e8;
+      --panel: #fffdf7;
+      --line: rgba(17, 19, 21, .16);
+      --blue: #245b73;
+      --green: #54705c;
+      --rust: #9e4937;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.78;
+    }
+    a { color: inherit; text-decoration-color: rgba(17, 19, 21, .35); text-underline-offset: 4px; }
+    img, iframe { display: block; width: 100%; }
+    img { height: auto; }
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(360px, 1.08fr);
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(28px, 5vw, 68px);
+    }
+    .kicker {
+      width: fit-content;
+      margin-bottom: 26px;
+      padding: 4px 9px;
+      border: 1px solid var(--ink);
+      background: #d9edf0;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(46px, 8vw, 106px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+    .dek {
+      max-width: 720px;
+      margin: 26px 0 0;
+      color: #33363a;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.56;
+    }
+    .meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 34px;
+    }
+    .pill {
+      padding: 7px 10px;
+      border: 1px solid var(--ink);
+      background: rgba(255, 255, 255, .62);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .hero-image {
+      min-height: 560px;
+      border-left: 1px solid var(--line);
+      background: #d8dde0;
+    }
+    .hero-image img {
+      height: 100%;
+      min-height: 560px;
+      object-fit: cover;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 54px 20px 86px;
+    }
+    section { margin-top: 72px; }
+    .lead-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+      gap: 30px;
+      align-items: start;
+    }
+    .stamp {
+      position: sticky;
+      top: 18px;
+      border-top: 6px solid var(--ink);
+      padding-top: 18px;
+      color: #25272a;
+      font-size: 22px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+    .body-copy {
+      font-size: 18px;
+      color: #25272a;
+    }
+    .body-copy p { margin: 0 0 18px; }
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(31px, 4vw, 54px);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 34px 0 12px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+    .project {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(310px, .72fr);
+      gap: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    .project + .project { margin-top: 78px; }
+    .project-meta {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+    .fact {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 10px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+    .fact b { color: var(--blue); }
+    figure {
+      margin: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    figcaption {
+      padding: 10px 12px 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .image-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 18px 0 26px;
+    }
+    .callout {
+      margin: 26px 0;
+      padding: 18px 20px;
+      background: #121416;
+      color: #f7f3e9;
+      font-size: 19px;
+      line-height: 1.62;
+    }
+    .callout strong { color: #bde2ea; }
+    .live-card {
+      margin-top: 20px;
+      padding: 18px;
+      border: 1px solid var(--ink);
+      background: #fbfffd;
+    }
+    .live-card p { margin: 0 0 12px; color: #2b2d30; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 8px 13px;
+      background: var(--rust);
+      border: 1px solid var(--ink);
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .video {
+      position: relative;
+      margin: 20px 0 26px;
+      aspect-ratio: 16 / 9;
+      border: 1px solid var(--line);
+      background: #0c0d0e;
+      overflow: hidden;
+    }
+    .video iframe {
+      height: 100%;
+      border: 0;
+    }
+    .analysis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 26px;
+    }
+    .tile {
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .tile b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 18px;
+    }
+    .sources {
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .sources li { margin-bottom: 7px; }
+    @media (max-width: 880px) {
+      .hero, .lead-grid, .project, .analysis { grid-template-columns: 1fr; }
+      .hero-image { border-left: 0; border-top: 1px solid var(--line); }
+      .hero-image, .hero-image img { min-height: 380px; }
+      .stamp { position: static; }
+      .image-pair { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-copy">
+      <div>
+        <span class="kicker">Experimental Art Dispatch</span>
+        <h1>声音死后，谁来继续发声</h1>
+        <p class="dek">一件 2024 年的 AI 声音装置试图让艺术家的空间音频在缺席之后继续生成；一件 2001 年的声雕塑把文艺复兴复调拆成四十个可走近的声音身体。它们讨论的不是“声音像不像原作”，而是声音如何在房间、算法和观众的脚步中重新获得形体。</p>
+        <div class="meta-strip">
+          <span class="pill">evala</span>
+          <span class="pill">Janet Cardiff</span>
+          <span class="pill">声音档案 / 空间音频 / AI / 声雕塑</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="2026-06-22-assets/studies-for-installation-large.jpg" alt="evala 的 Studies for 在 ICC 展场中的白色曲面空间">
+    </div>
+  </header>
+
+  <main>
+    <section class="lead-grid">
+      <div class="stamp">当声音离开原来的身体，它不会自动变成档案；它会被新的空间、机器和听众重新组织。</div>
+      <div class="body-copy">
+        <p>声音艺术里最容易被低估的部分，是观众并不只是“听见”作品。观众在移动、停顿、靠近某个声源、离开另一个声源时，已经参与了作品的混音。空间不是容器，而是乐器；身体也不是接收端，而是不断改变声音关系的调音器。</p>
+        <p>evala 的 <em>Studies for</em> 和 Janet Cardiff 的 <em>The Forty Part Motet</em> 都把这个问题推到前台。前者训练一个能实时生成“evala 式声音”的模型，让过去的空间音频作品成为新声音的种子；后者把 Thomas Tallis 的四十声部经文歌拆分到四十只扬声器里，让每个声部重新站在观众面前。一个面向艺术家缺席之后的未来，一个回到五百年前复调音乐的身体结构；二者都把声音从“作品的录音”变成可穿行的空间关系。</p>
+      </div>
+    </section>
+
+    <section class="project">
+      <article class="body-copy">
+        <h2>Studies for：让档案继续长出声音</h2>
+        <p><em>Studies for</em> 是日本声音艺术家 evala 在 NTT InterCommunication Center [ICC] 特展 “evala: Emerging Site / Disappearing Sight” 中呈现的声音装置，展期为 2024 年 12 月 14 日至 2025 年 3 月 9 日。ICC 的项目说明把它称为一次用声音效果生成 AI 创造空间作品的尝试：模型学习 evala 过去发表的 36 件空间音频作品，并以多声道方式实时生成“像 evala 的声音”。</p>
+        <p>观众进入的是一段几乎没有可见物的白色曲面空间。作品的主要材料不是屏幕图像，而是看不见的八声道声音场：每个声道都以 evala 作品开头常用的口哨声，以及从既有作品标题中选出的文本作为提示。Sony Creative AI Lab 后续发表的研究页面进一步说明，这件作品使用 SpecMaskGIT 声音生成模型，原作是八声道空间音频，公开演示视频只提供立体声混音，因此无法完整替代现场的空间感。</p>
+        <div class="image-pair">
+          <figure>
+            <img src="2026-06-22-assets/studies-for-installation-large.jpg" alt="Studies for 展场中弧形白墙和空旷通道">
+            <figcaption>《Studies for》在 ICC 的展场图像。可见的空间极度克制，声音成为真正塑造路径和注意力的材料。Photo: TOMITA Ryohei / ICC</figcaption>
+          </figure>
+          <figure>
+            <img src="2026-06-22-assets/studies-for-installation-detail.jpg" alt="evala 特展 Emerging Site / Disappearing Sight 的视觉海报">
+            <figcaption>“Emerging Site / Disappearing Sight” 展览视觉。标题中的“显现的场 / 消失的像”也精确描述了这件作品的观看状态：视觉退后，声音显影。</figcaption>
+          </figure>
+        </div>
+        <p>这件作品的关键并不只是“AI 能模仿艺术家风格”。更重要的是，它把档案从静态存储改造成一个会继续发声的系统。过去作品中的声音数据被转化为模型的学习材料；模型不是播放旧作，而是在艺术家提供概念、方向和数据的框架下生成新的空间声响。ICC 页面明确写到，这是一种探索新型档案的实验：即使艺术家缺席，空间音频作品也可能被继承并继续创作。</p>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/-KNZaEyBhws?si=KKc1_85zJm3Fjzsr" title="evala Studies for demo video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p>这种设想很诱人，也很危险。诱人之处在于，声音艺术常常依赖现场、设备、空间和技术环境，档案化并不容易；如果模型能够继承艺术家的声音方法，它似乎能延长作品生命。危险之处在于，艺术家的“风格”一旦变成可生成的统计倾向，作品就可能被误读为一种无限供应的签名声音。<em>Studies for</em> 比较清醒的地方，是它没有把 AI 包装成替代艺术家的自动作者，而是把它放在“第一试验模型”的位置上：它展示的是继承的可能性，也暴露继承本身需要被审美、技术和伦理共同约束。</p>
+        <div class="callout"><strong>这件作品真正锋利的地方在于：</strong>它不是给旧作品做纪念碑，而是让旧作品成为一个会继续变异的发声器。档案在这里不再安静，保存也不再等于冻结。</div>
+        <div class="live-card">
+          <p>Sony 研究页面提供演示视频和论文入口；视频为立体声混音，适合理解机制，但不能替代八声道现场经验。</p>
+          <a class="button" href="https://sony.github.io/studies-for/" target="_blank" rel="noreferrer">打开演示与论文页面</a>
+        </div>
+      </article>
+      <aside class="project-meta">
+        <div class="fact"><b>艺术家</b><span>evala</span></div>
+        <div class="fact"><b>年份</b><span>2024</span></div>
+        <div class="fact"><b>形式</b><span>AI 生成声音、八声道空间音频、声音档案、展场装置</span></div>
+        <div class="fact"><b>展览</b><span>NTT InterCommunication Center [ICC]，“evala: Emerging Site / Disappearing Sight”，2024.12.14-2025.3.9</span></div>
+        <div class="fact"><b>机制</b><span>模型学习 evala 过去 36 件空间音频作品，并以口哨声和作品标题文本作为提示实时生成多声道声音。</span></div>
+      </aside>
+    </section>
+
+    <section class="project">
+      <article class="body-copy">
+        <h2>The Forty Part Motet：走进一首四十声部的歌</h2>
+        <p>Janet Cardiff 的 <em>The Forty Part Motet</em> 创作于 2001 年，全名为 <em>The Forty Part Motet: A reworking of “Spem in Alium,” by Thomas Tallis 1556</em>。作品把英国作曲家 Thomas Tallis 的四十声部经文歌 <em>Spem in alium</em> 重新处理为一件声雕塑：四十只高保真扬声器被排成椭圆或环形，每只扬声器播放一个独立声部，观众可以走到任意一只扬声器旁边，听一个人的声音，也可以站到中间，让四十个声部在身体周围重新合成。</p>
+        <p>National Gallery of Canada 的展览说明写得很准确：今天大多数人通过客厅里的两个扬声器听音乐，即使在现场音乐会里，观众也通常与单个歌唱者保持距离；Cardiff 想做的是“爬进音乐里面”。Met 对 2013 年 The Cloisters 展示的说明也强调，作品总长约 14 分钟，其中包括 11 分钟的 Tallis 乐曲重作和 3 分钟的说话间奏。录音过程中，Salisbury Cathedral Choir 等歌者的声音被分轨捕捉，最终成为四十个可被单独接近的声音点。</p>
+        <div class="image-pair">
+          <figure>
+            <img src="2026-06-22-assets/forty-part-motet-nelson-header.jpg" alt="The Forty Part Motet 在 Nelson-Atkins Museum 展厅中的安装全景">
+            <figcaption>《The Forty Part Motet》在 Nelson-Atkins Museum 的安装视图。四十只扬声器让观众在合唱内部行走。Image: Nelson-Atkins Museum of Art</figcaption>
+          </figure>
+          <figure>
+            <img src="2026-06-22-assets/forty-part-motet-nelson-detail.jpg" alt="四十只扬声器在白色展厅中排列成环形">
+            <figcaption>扬声器既是播放设备，也是“歌者”的替身。观众靠近其中一只时，会短暂听到一个独立声部的呼吸、音色和位置。</figcaption>
+          </figure>
+        </div>
+        <figure>
+          <img src="2026-06-22-assets/forty-part-motet-groundwork.jpg" alt="The Forty Part Motet 在 Richmond Chapel 的教堂空间中展出">
+          <figcaption>作品在 Richmond Chapel / Groundwork 展示时的现场。不同建筑会改变同一组声音的回响、距离和神圣感。Photo: Steve Tanner / Groundwork</figcaption>
+        </figure>
+        <p>Cardiff 的作品并没有生成新的乐曲，却彻底改变了听众与乐曲的关系。Tallis 的复调原本依赖许多声部同时展开，听众往往被总体的和声包围；Cardiff 则让每个声部获得一个具体的位置。观众不再只是站在音乐外部接收结果，而是用自己的行走决定此刻的混音比例。作品没有按钮、屏幕或复杂界面，互动发生在最基本的身体动作里：靠近、转身、离开、停住。</p>
+        <p>这也是它作为声雕塑而非音乐播放的原因。四十只扬声器不是中性的技术设备，而是分布在空间中的声音身体。每个声部都像一个独立的人站在那里；当观众从一个扬声器移动到另一个扬声器，音乐不再是时间线上向前推进的整体，而变成一个可穿行的建筑。它把复调音乐中原本抽象的结构翻译成距离、方向和身体尺度。</p>
+        <div class="callout"><strong>这件作品的力量在于：</strong>它没有让古乐变得“现代化”，而是让听众重新获得只有歌者才拥有的内部听觉。观众不是听一首歌，而是在四十个声音之间重新建造这首歌。</div>
+        <div class="live-card">
+          <p>Met 页面保留了作品结构、录音过程与 The Cloisters 展示说明；National Gallery of Canada 页面说明了作品在 Rideau Chapel 中的四十扬声器呈现方式。</p>
+          <a class="button" href="https://www.metmuseum.org/exhibitions/listings/2013/janet-cardiff" target="_blank" rel="noreferrer">打开 Met 展览页</a>
+        </div>
+      </article>
+      <aside class="project-meta">
+        <div class="fact"><b>艺术家</b><span>Janet Cardiff</span></div>
+        <div class="fact"><b>年份</b><span>2001</span></div>
+        <div class="fact"><b>形式</b><span>40 轨声音装置、声雕塑、扬声器阵列、空间化合唱</span></div>
+        <div class="fact"><b>音乐</b><span>Thomas Tallis《Spem in alium》，由 Salisbury Cathedral Choir 等歌者分轨录制。</span></div>
+        <div class="fact"><b>观看</b><span>观众在四十只扬声器之间自由移动，用位置改变自己听到的声部组合。</span></div>
+      </aside>
+    </section>
+
+    <section class="body-copy">
+      <h2>档案不是坟墓，空间也不是背景</h2>
+      <p>把这两件作品并置，最有意思的不是技术年代的对比。<em>The Forty Part Motet</em> 没有 AI，却已经把“录音”从复制工具变成了空间事件；<em>Studies for</em> 使用 AI，却并不满足于制造一段可播放的声音，而是把模型放进现场，让声音每次生成时都重新面对空间。它们共同说明，声音艺术的核心不只是音色、旋律或数据，而是声音如何获得位置。</p>
+      <div class="analysis">
+        <div class="tile"><b>Cardiff 把历史拆成身体</b>四十个声部被拆到四十只扬声器里，音乐史不再是远处的经典，而是观众可以逐一靠近的声音身体。</div>
+        <div class="tile"><b>evala 把档案变成系统</b>过去的空间音频作品不再只是被保存，而是成为模型继续生成声音的材料；档案从存放处变成发声机制。</div>
+        <div class="tile"><b>两者都拒绝平面播放</b>耳机、屏幕或双声道视频只能给出文档；作品真正发生在身体进入声音场之后，发生在位置改变听觉的那一刻。</div>
+      </div>
+      <p>这也让“保存”变得复杂。Cardiff 保存的是一首古老乐曲的内部结构，但她没有把它封存在权威版本里，而是让观众用身体反复重组它。evala 和 Sony 团队保存的是艺术家既有声音实践中的方法和倾向，但它们被交给模型之后，保存就带有生成、偏移和失控的可能。二者都不把档案理解为终点；档案更像一个仍在运转的声学装置。</p>
+      <p>因此，声音“死后”并不只有两种命运：被遗忘，或被忠实复制。它还可以被拆分、移位、训练、再合成；它可以借助扬声器站成一圈，也可以借助模型在不可见的声场中继续生长。真正值得追问的是，谁有权决定这种继续发声的方式，谁能听见它的变化，谁又会把生成误认为复活。好的声音艺术不急着给出答案，它让观众在空间里亲自感到：每一次听见，都已经是一种重新制作。</p>
+    </section>
+
+    <section class="sources">
+      <h3>来源与延伸阅读</h3>
+      <ol>
+        <li><a href="https://www.ntticc.or.jp/en/archive/works/studies-for/" target="_blank" rel="noreferrer">NTT InterCommunication Center [ICC]: “Studies for” (2024)</a></li>
+        <li><a href="https://sony.github.io/studies-for/" target="_blank" rel="noreferrer">Sony Group Corporation: evala “Studies for” demo and paper page</a></li>
+        <li><a href="https://arxiv.org/abs/2510.25228" target="_blank" rel="noreferrer">Chihiro Nagashima et al., “Studies for”: A Human-AI Co-Creative Sound Artwork Using a Real-time Multi-channel Sound Generation Model</a></li>
+        <li><a href="https://www.gallery.ca/whats-on/exhibitions-and-galleries/janet-cardiff-forty-part-motet" target="_blank" rel="noreferrer">National Gallery of Canada: Janet Cardiff: Forty-Part Motet</a></li>
+        <li><a href="https://www.metmuseum.org/exhibitions/listings/2013/janet-cardiff" target="_blank" rel="noreferrer">The Metropolitan Museum of Art: Janet Cardiff: The Forty Part Motet</a></li>
+        <li><a href="https://nelson-atkins.org/art/exhibitions/janet-cardiff-forty-part-motet/" target="_blank" rel="noreferrer">Nelson-Atkins Museum of Art: Janet Cardiff: Forty-Part Motet</a></li>
+        <li><a href="https://groundwork.art/artists/janet-cardiff/" target="_blank" rel="noreferrer">Groundwork: Janet Cardiff</a></li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
