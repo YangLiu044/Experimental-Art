@@ -1,7 +1,12 @@
 {
-  "updatedAt": "2026-06-20T11:33:08.428Z",
+  "updatedAt": "2026-06-21T16:30:27.478Z",
   "retentionDays": 45,
   "episodes": [
+    {
+      "date": "2026-06-22",
+      "audioUrl": "https://yangliu044.github.io/Experimental-Art/audio/2026-06-22.wav",
+      "audioFileName": "2026-06-22.wav"
+    },
     {
       "date": "2026-06-20",
       "audioUrl": "https://yangliu044.github.io/Experimental-Art/audio/2026-06-20.wav",
