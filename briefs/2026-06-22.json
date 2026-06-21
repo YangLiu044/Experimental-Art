@@ -1,0 +1,53 @@
+{
+  "title": "声音死后，谁来继续发声",
+  "text": "今天的两件作品把声音从“播放内容”推进到空间、身体和档案机制中：evala 的《Studies for》用 AI 学习艺术家既有空间音频作品，并在 ICC 展场中实时生成八声道声音；Janet Cardiff 的《The Forty Part Motet》把 Tallis 的四十声部经文歌拆到四十只扬声器里，让观众在声音内部行走。",
+  "date": "2026-06-22",
+  "htmlFile": "briefs/2026-06-22.html",
+  "url": "https://yangliu044.github.io/Experimental-Art/briefs/2026-06-22.html",
+  "items": [
+    {
+      "title": "Studies for",
+      "artist": "evala",
+      "location": "NTT InterCommunication Center [ICC], Tokyo",
+      "year": "2024",
+      "medium": "AI 生成声音、八声道空间音频、声音档案、展场装置",
+      "summary": "作品学习 evala 过去发表的 36 件空间音频作品，以口哨声和作品标题文本作为提示，实时生成多声道“evala 式声音”。观众进入白色曲面空间，主要通过不可见的声音场感知作品。",
+      "sources": [
+        {
+          "label": "ICC: “Studies for” (2024)",
+          "href": "https://www.ntticc.or.jp/en/archive/works/studies-for/"
+        },
+        {
+          "label": "Sony: Studies for demo and paper page",
+          "href": "https://sony.github.io/studies-for/"
+        },
+        {
+          "label": "arXiv: Human-AI Co-Creative Sound Artwork",
+          "href": "https://arxiv.org/abs/2510.25228"
+        }
+      ]
+    },
+    {
+      "title": "The Forty Part Motet",
+      "artist": "Janet Cardiff",
+      "location": "National Gallery of Canada / The Met / touring installations",
+      "year": "2001",
+      "medium": "40 轨声音装置、声雕塑、扬声器阵列、空间化合唱",
+      "summary": "Cardiff 将 Thomas Tallis 的四十声部经文歌《Spem in alium》分配给四十只扬声器。观众可以在扬声器之间移动，听见单个声部，也能站在中央感受复调合唱重新合成。",
+      "sources": [
+        {
+          "label": "National Gallery of Canada: Janet Cardiff: Forty-Part Motet",
+          "href": "https://www.gallery.ca/whats-on/exhibitions-and-galleries/janet-cardiff-forty-part-motet"
+        },
+        {
+          "label": "The Met: Janet Cardiff: The Forty Part Motet",
+          "href": "https://www.metmuseum.org/exhibitions/listings/2013/janet-cardiff"
+        },
+        {
+          "label": "Nelson-Atkins Museum of Art: Janet Cardiff: Forty-Part Motet",
+          "href": "https://nelson-atkins.org/art/exhibitions/janet-cardiff-forty-part-motet/"
+        }
+      ]
+    }
+  ]
+}
