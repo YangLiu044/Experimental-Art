@@ -1,24 +1,7 @@
 {
-  "updatedAt": "2026-06-21T17:01:47.599Z",
+  "updatedAt": "2026-06-22T01:32:03.763Z",
   "retentionDays": 45,
   "episodes": [
-    {
-      "date": "2026-06-22",
-      "title": "2026-06-22 全球要闻音频博客",
-      "audioUrl": "https://yangliu044.github.io/Experimental-Art/audio/2026-06-22-global.wav",
-      "audioFileName": "2026-06-22-global.wav"
-    },
-    {
-      "date": "2026-06-22",
-      "title": "2026-06-22 中国商业科技动态",
-      "audioUrl": "https://yangliu044.github.io/Experimental-Art/audio/2026-06-22-business-tech.wav",
-      "audioFileName": "2026-06-22-business-tech.wav"
-    },
-    {
-      "date": "2026-06-22",
-      "audioUrl": "https://yangliu044.github.io/Experimental-Art/audio/2026-06-22.wav",
-      "audioFileName": "2026-06-22.wav"
-    },
     {
       "date": "2026-06-20",
       "audioUrl": "https://yangliu044.github.io/Experimental-Art/audio/2026-06-20.wav",
