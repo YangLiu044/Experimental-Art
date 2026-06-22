@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-06-22T01:32:03.763Z",
+  "updatedAt": "2026-06-22T01:32:51.674Z",
   "retentionDays": 45,
   "episodes": [
+    {
+      "date": "2026-06-22",
+      "title": "2026-06-22 全球要闻音频博客",
+      "audioUrl": "https://yangliu044.github.io/Experimental-Art/audio/2026-06-22-global.wav",
+      "audioFileName": "2026-06-22-global.wav"
+    },
     {
       "date": "2026-06-20",
       "audioUrl": "https://yangliu044.github.io/Experimental-Art/audio/2026-06-20.wav",
