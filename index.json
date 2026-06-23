@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-06-22T01:40:03.188Z",
+  "updatedAt": "2026-06-23T02:59:23.562Z",
   "retentionDays": 45,
   "episodes": [
+    {
+      "date": "2026-06-23",
+      "title": "2026-06-23 全球要闻音频博客",
+      "audioUrl": "https://yangliu044.github.io/Experimental-Art/audio/2026-06-23-global.wav",
+      "audioFileName": "2026-06-23-global.wav"
+    },
     {
       "date": "2026-06-22",
       "title": "2026-06-22 中国商业科技动态热点分析",
